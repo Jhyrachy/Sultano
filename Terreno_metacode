@@ -1,0 +1,56 @@
+Definizione del terreno stratificato in uno strato equivalente. Si deve fare una media ponderata dei vari valori.
+3possibilità di scelta della profondità di indagine (utopicamente sceglibili dal pannello preferences)
+  -multiplo della larghezza B della fondazione (classicamente 2B dove B è la grandezza minore della fondazione)
+  -profondità raggiunta dal cuneo elastico indeformabile (triangolo del cinematismo)
+  -valore hardcoded imposto dall'utente (a=6.2m per esempio)
+  
+  -N.B. QUESTA DISTANZA SI RIFERISCE DAL PIANO DI POSA DELLA FONDAZIONE, NON DAL PIANO CAMPAGNA, CONSIDERARE LO SCAVO, MA INSERIRE IL TERRENO DAL PIANO CAMPANA PER CONSIDERARE  SIA MAYEROFF (spirale logaritmica fino a piano campagna) CHE EVENTUALE PRESSIONE DI CONFINAMENTO DEL TERRENO SUPERIORE
+	--> UTILIZZARE IL PARAMETRO approfondimento scavo della fondazione [D] da definirsi con la fondazione 
+  
+  
+
+per esempio, per un parametro "p" e altezze di strati h_i (con i=1 to n) si definisce:
+
+	p_equiv= [(p_1*h_1)+(p_2*h_2)+...+(p_n*h_n)]/[h_1+h_2+...+h_n] 
+	
+		dove: h_n è la porzione dell'ultimo strato considerato dentro la profondità critica di indagine
+		
+		
+Creare una tabella dove per ogni strato si inseriscono i parametri del terreno	
+Colonne tabella (parametri su cui fare la media)
+	Id_strato	(progressivo)
+	Descrizione	(stringa di testo libera)
+	Hstr		(altezza dello strato)
+	gamma_nat	(densità naturale terreno)
+	gamma_sat	(densità satura del terreno)
+	fi			(angolo di resistenza al taglio, ESPRESSO IN GRADI NON RADIANTI)
+	c'			(coesione drenata del terreno)
+	cu			(coesione NON drenata del terreno)
+	Eed			(modulo edometrico strato --> per modulo cedimenti edometrici argile)
+	Dr			(densità relativa dello strato. 0.9 è denso al 90% di grani, 10% di vuoti --> UTILIZZATO PER LA VERIFICA A PUNZONAMENTO)
+	h_fald		(altezza della falda dal piano campagna)
+	
+N.B. --> per fi (angolo di resistenza al taglio) la media ponderata fa fatta sulla tangente [tan(fi)] NON sull'angolo puro (cfr. criterio mhor-coulomb di resistenza per attrito tangenziale)
+
+
+
+
+TUTTO QUANTO SOPRA DESCRITTO VALE PER TERRENO ASCIUTTO NON IN FALDA, NEL CASO DI FALDA:
+	-la linea di falda costituisce una linea fittizzia di separazione di strato
+	sotto di essa si considera il gamma_sat
+	
+	-si assume la densità dell'acqua sporca di terreno di solito gamma_water = 10kN/m^3
+	
+	-condizioni drenate					--> terreno sotto falda gamma_terrEquiv = gamma_sat - gamma_water
+	-condizioni NON drenate (sature)	--> gamma_terrEquiv = gamma_sat
+
+	
+	
+Calcolare entrambe le condizioni, drenata e non drenata, perché servono entrambe nelle verifiche (carico istantaneo tipo un treno che passa su un viadotto, carico permanente tipo un terrapieno che fa da rampa per un cavalcavia)
+	
+	
+	
+	
+
+
+N.B. --> inserire tutto in unità di misura consistenti. Utopia creare un gestore di conversione delle unità di misura (kg, kN, N, mm, kPa, eccc)	
