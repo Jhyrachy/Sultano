@@ -1,0 +1,206 @@
+moduli per califfo linux
+
+	--Parametri terreno
+	
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+	
+
+	--Teorie statiche
+		
+		-terzaghi 43
+		-brinch-hansen 70
+		-ec7 04
+		-roccia
+		-mayerhof 63
+		-vesic 75
+		-richards 93
+		-custom (formalzione califfo...bho farla costa nulla)
+		-greek (EAK200)
+		
+			-sub teorie per N_gamma
+				-standard
+				-chen 75
+				-michalowski 97
+				-haijaj & altri 05
+				-Loukidis & Salgado 10
+				-poulos & altri 01
+				-spangler & handy 82
+				-Feda 61
+				-kriztek 65
+				-ingra & baecher (L/B=6)
+				-ingra & baecher (L/B=1)
+				-zhu & altri - terzaghi
+				-zhu & altri - altre teorie
+				-zhu & altri - criterio minimo
+				-Martin 05
+				-kunbhojkar 93
+				-terzaghi 43
+				-brinch-hansen 70
+				-vesic 75
+				-ec7 04
+				
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+
+		
+	--Teorie sismiche
+		-di base
+			-maugeri & novità
+			-Paolucci Pecker
+			-Cascone e Altri
+			
+		
+		-cinematiche globali (na merda da inseire per onor di letteratura)
+			-mauger & novità
+			-paolucci packer
+			-cascone & altri
+			-budhu & al-karni
+			-richards & altri
+
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+
+			
+	--Punzonamento
+		  -criteri di 
+			  -terzaghi
+			  -vesic (sabbie)
+			  -vesic (se Ir < Ir_crit)
+			
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+
+			
+	--Geometria fondazione
+		-rettangolare
+		-circolare
+		-generica (cad interno e dxf)
+			-T
+			-croce
+			-L
+			-circolare
+			-coordinate
+			-DXF
+			
+			-INSERIMENTO VARI PUNTI E LINEE DI CARICO
+				-statici		ULS
+				-sismici		ULS
+				-sismici 	Global	(che merda)
+				-esercizio	SLS		(tensioni, fessure e cedimenti)
+					-rari
+					-frequenti
+					-quasi permanenti
+			
+		-Tutto questo finalizzato ad un rettangolo equivalente con stesse
+     caratteristiche inerziali--> indeformabilità della fondazione, per platee deformabili necesaria analisi FEM
+
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+		
+	
+	--Carichi
+				-statici		ULS
+				-sismici		ULS
+				-sismici 	Global	(che merda)
+				-esercizio	SLS		(tensioni, fessure e cedimenti)
+					-rari
+					-frequenti
+					-quasi permanenti
+					
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+
+	--cedimenti
+		-edometrici (coesivi - argille)
+		-fox elastici
+		-bowles
+
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+
+
+	-- Utility Parametri fisici terreni
+		-da dei dati noti ricavo altri collegati in varie combinazioni, e posso inviare poi quanto calcolato
+     a una stampa o a uno strato di terreno 
+		
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+
+
+	-- Parametri normativi
+		  -vari coeff di sicurezza normativi
+		  -differenti approcci (DA1 DA2, combinazioni 1 e 2 del DA1--> NTC18 merda)
+		
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+
+
+	--confronto tra teorie
+		-un qualcosa che grafichi il confronto tra le varie teorie
+			-capacità portante
+			-scorrimento
+			-punzonamento
+		-un qualcosa che grafichi il confronto tra le varie sub teorie N_gamma
+		
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+
+		--Preferenze Utente
+			-settare i parametri di sistema
+			-settare preferenza di verifica
+			-settare eventuali coeff empirici (maledetta geotecnica empirica)
+			-unità di misura (immaigno già il bordello)
+
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+
+		--Modulo di taglio G
+			  -una maschera per il suo calcolo
+
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+
+		-- funzione N_gamma da utente per punti
+			  -poterne salvare in libreria più di una
+
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+
+
+		--stampa
+			-vari formati
+				-rtf/doc	--> iportante
+				-pdf		--> orpello
+			-immaginette
+				-sup rottura
+				-parzializzazione plinto
+			-tabelle varie con terreni e parametri di verifica
+
++-----------------------------------------------+
+sono un bellissimo separatore
++-----------------------------------------------+
+--Utopia
+		-modulo armature plinti snelli
+		-modulo armature plinti tozzi
+		-modulo armature travi rovesce
+		-modulo armature platee (wood armer e wikler FEM)
+		-verifica ribaltamento
+			-plinto singolo tralicci con più appoggi
+			-più plinti di un singolo traliccio(grossi robi enel)
+			-plintone turbine eoliche
+			-plintone nervato/spider turbine eoliche
+		-salvare libreria terreni tipici da poter modificare e salvare (buona idea quella di non poter modificare
+     quelli di default come TERMUS o MC11300)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
